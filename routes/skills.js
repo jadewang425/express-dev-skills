@@ -6,4 +6,6 @@ const skillsCtrl = require('../controllers/skills')
 /* GET /skills */
 router.get('/', skillsCtrl.index);
 
+router.get('/:skill', skillsCtrl.show)
+
 module.exports = router;
