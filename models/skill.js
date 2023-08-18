@@ -6,16 +6,25 @@ const skills = [
 ]
 module.exports = {
     getAll,
-    getOne
+    getOne,
+    create,
+    deleteOne
+}
+
+function deleteOne(skill) {
+    const idx = skills.findIndex(skillObj => skillObj.skill === skill);
+    skills.splice(idx, 1);
 }
 
 function getOne(skill) {
-    // something's wrong with this one
-    // console.log(skills.find(obj => obj.skill === skill))
     return skills.find(obj => obj.skill === skill)
 }
 
 function getAll() {
-    // console.log(skills)
     return skills
+}
+
+function create(skillObj) {
+    skillObj.level = 'beginner';
+    skills.push(skillObj);
 }
