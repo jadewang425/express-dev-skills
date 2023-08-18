@@ -32,9 +32,8 @@ function create(req, res) {
     res.redirect('/skills');
 }
 
-// this is not working
 function deleteSkill(req, res) {
-    Skill.deleteOne(req.parms.skill);
+    Skill.deleteOne(req.params.skill);
     // console.log('deleteSkill', req.parms.skill)
     res.redirect('/skills');
 }
